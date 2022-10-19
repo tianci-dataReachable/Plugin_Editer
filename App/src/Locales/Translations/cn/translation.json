@@ -1,0 +1,204 @@
+{
+    "centre": {
+        "client": "客户中心",
+        "supplier": "应聘者中心"
+    },
+    "log": {
+        "login": "登录",
+        "signUp": "注册"
+    },
+    "alert": {
+        "contact": "联系我们",
+        "sendMessage": "发送消息",
+        "send": "发送",
+        "cancel": "取消",
+        "applyTask": "申请任务",
+        "choose": "选择一个申请任务的组织",
+        "org": "组织",
+        "apply": "申请"
+    },
+    "warning": {
+        "keywords": "暂无关键字",
+        "contact": "暂无联系人",
+        "sameKeyword": "请勿输入重复关键字",
+        "keywordLength": "关键词最多为5个！",
+        "applicant": "暂无应聘者",
+        "search": "请输入需要搜索的内容",
+        "projectDesc": "暂无描述"
+    },
+    "placeholder": {
+        "criteria": "请在这里输入文字描述",
+        "contact": "邮件内容"
+    },
+    "industry": {
+        "Healthcare": "医药",
+        "Academic/Research": "学术",
+        "Quizzes": "问答",
+        "Demographics": "人口学",
+        "Education": "教育",
+        "MarketResearch": "市场调研",
+        "HumanResource": "人力资源",
+        "CustomerExperience": "客户体验"
+    },
+    "category": {
+        "SurveyDesign": "问卷设计",
+        "SurveyDistribution": "问卷分发",
+        "SurveyAnalysis & Report": "问卷分析和报告",
+        "surveyAnalysis": "问卷分析",
+        "surveyReport": "问卷报告"
+    },
+    "nav": {
+        "guide": "导航",
+        "popularOrganizations": "热门品牌",
+        "popularOpenProjects": "公开项目",
+        "projectHall": "项目大厅",
+        "plugins": "插件售卖",
+        "hotTask": "任务大厅",
+        "cooperativeOrganizations": "合作伙伴",
+        "home": "主页",
+        "project": "项目信息",
+        "task": "任务信息"
+    },
+    "plugins": {
+        "All": "All",
+        "Financial": "金融",
+        "SurveyDesign": "问卷设计",
+        "Banking": "银行",
+        "SurveyDistribution": "问卷分发",
+        "Insurance": "保险",
+        "Academic": "学术",
+        "SurveyAnalysis": "问卷分析"
+    },
+    "taskStatus": {
+        "inProgress": "进行中",
+        "stop": "中止",
+        "draft": "草稿"
+    },
+    "applyStatus": {
+        "agree": "同意",
+        "refuse": "拒绝",
+        "pend": "等待"
+    },
+    "home": {
+        "search": "请输入关键字搜索任务",
+        "menu": "目录",
+        "tashHall": "任务大厅",
+        "development": "开发者",
+        "dateTrade": "数据交易",
+        "report": "数据报告",
+        "openSource": "开源平台",
+        "community": "协作社区",
+        "morningRemind": "早上好",
+        "afternoonRemind": "下午好",
+        "eveningRemind": "晚上好",
+        "login": "登录",
+        "sighUp": "注册",
+        "slogan": "我们有最好的研究机构帮助您实现商业成功",
+        "slogan2": "调研人人皆能，处处皆有",
+        "at": "于",
+        "publish": "发布",
+        "viewMore": "查看更多",
+        "more": "更多",
+        "belong": "属于 ",
+        "applier": "申请者"
+    },
+    "clientCentre": {
+        "home": "主页",
+        "title1": "我发布的任务",
+        "title2": "我申请的任务",
+        "addTask": "增加新任务",
+        "name": "任务名",
+        "bid": "价格",
+        "status": "状态",
+        "pubDate": "发布时间"
+    },
+    "detailPage": {
+        "home": "主页",
+        "project": "项目",
+        "task": "任务",
+        "usd": "美元",
+        "orgLeft": "我是 ",
+        "orgRight": " 的成员",
+        "criteria": "项目标准",
+        "relatedTasks": "相关任务",
+        "addTask": "增加新任务",
+        "viewer": "观看数",
+        "applicants": "申请数",
+        "contact": "联系我们",
+        "apply": "申请",
+        "belong": "属于 ",
+        "edit": "编辑",
+        "applicant": "应聘者",
+        "nickName": "名称",
+        "contactWay": "联系方式",
+        "status": "状态",
+        "organization": "组织"
+    },
+    "publishProject": {
+        "head": "发布任务",
+        "title": "任务信息",
+        "addTask": "增加新任务",
+        "cancel": "取消",
+        "name": "任务名称",
+        "des": "任务描述",
+        "bid": "出价",
+        "changeStatus": "更改状态",
+        "save": "保存",
+        "publish": "发布",
+        "placeHolder1": "请填入任务名称",
+        "placeHolder2": "请写出关于任务的详细情况"
+    },
+    "publishTask": {
+        "title": "项目信息",
+        "projectName": "项目名称",
+        "orgName": "项目组织",
+        "des": "项目描述",
+        "industry": "行业 ",
+        "contact": "联系人",
+        "keyword": "项目关键词",
+        "photo": "展示图片",
+        "cover": "封面图",
+        "warningLeft": "最多上传 ",
+        "warningRight": " 张图片",
+        "criteria": "项目标准",
+        "save": "保存并发布",
+        "cancel": "取消",
+        "edit": "编辑"
+    },
+    "taskHall": {
+        "home": "主页",
+        "title": "任务大厅",
+        "industry": "行业：",
+        "category": "任务种类：",
+        "all": "全部",
+        "pubDate": "发布日期",
+        "price": "价格",
+        "name": "名称",
+        "hot": "热度",
+        "taskName": "任务名称",
+        "view": "浏览次数",
+        "industry2": "行业"
+    },
+    "sortPart": {
+        "PubdateOldtoNew": "发布日期:升序",
+        "PubdateNewtoOld": "发布日期:降序",
+        "PriceLowtoHigh": "价格:升序",
+        "PriceHightoLow": "价格:降序",
+        "NameZ-A": "名称:(Z-A)",
+        "NameA-Z": "名称:(A-Z)",
+        "HotLowtoHigh": "热度:升序",
+        "HotHightoLow": "热度:降序",
+        "filter": "筛选"
+    },
+    "centrePage": {
+        "switchOrg": "切换组织",
+        "": "",
+        "": "",
+        "": "",
+        "": "",
+        "": "",
+        "": "",
+        "": "",
+        "": ""
+    }
+}

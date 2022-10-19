@@ -1,0 +1,205 @@
+{
+    "centre": {
+        "client": "Client Center",
+        "supplier": " Supplier Center"
+    },
+    "log": {
+        "login": "Login",
+        "signUp": "Sign up"
+    },
+    "alert": {
+        "contact": "Contact",
+        "sendMessage": "Send a message",
+        "send": "Send",
+        "cancel": "Cancel",
+        "applyTask": "Apply task",
+        "choose": "choose an organization to apply task",
+        "org": "organization",
+        "apply": "apply"
+    },
+    "warning": {
+        "keywords": "No keywords yet",
+        "contact": "No contact yet",
+        "sameKeyword": "Repeated keywords",
+        "keywordLength": "Maximum keyword length is 5!",
+        "applicant": "No applicant here",
+        "search": "Please enter what you want to search",
+        "projectDesc": "No description yet"
+    },
+    "placeholder": {
+        "criteria": "put placeholder here",
+        "contact": "email content"
+    },
+    "industry": {
+        "Healthcare": "Healthcare",
+        "Academic/Research": "Academic/Research",
+        "Quizzes": "Quizzes",
+        "Demographics": "Demographics",
+        "Education": "Education",
+        "MarketResearch": "Market Research",
+        "HumanResource": "Human Resource",
+        "CustomerExperience": "Customer Experience"
+    },
+    "category": {
+        "SurveyDesign": "Survey Design",
+        "SurveyDistribution": "Survey Distribution",
+        "SurveyAnalysis & Report": "Survey Analysis & Report",
+        "surveyAnalysis": "Survey Analysis",
+        "surveyReport": "Survey Report"
+    },
+    "nav": {
+        "guide": "Guidance",
+        "popularOrganizations": "Popular Organizations",
+        "popularOpenProjects": "Popular Open Projects",
+        "projectHall": "Project Hall",
+        "plugins": "Plugins",
+        "hotTask": "Hot Task",
+        "cooperativeOrganizations": "Cooperative Organizations",
+        "home": "Home page",
+        "project": "Project Information",
+        "task": "Task Information"
+    },
+    "plugins": {
+        "All": "All",
+        "Financial": "Financial",
+        "SurveyDesign": "Survey Design",
+        "Banking": "Banking",
+        "SurveyDistribution": "Survey Distribution",
+        "Insurance": "Insurance",
+        "Academic": "Academic",
+        "SurveyAnalysis": "Survey Analysis"
+    },
+    "taskStatus": {
+        "inProgress": "In Progress",
+        "stop": "Stopped",
+        "draft": "Draft"
+    },
+    "applyStatus": {
+        "agree": "Agreed",
+        "refuse": "Refused",
+        "pend": "Pending"
+    },
+    "home": {
+        "search": "search for task or plugin",
+        "menu": "Menu",
+        "tashHall": "Task Hall",
+        "development": "Developer",
+        "dateTrade": "Data Trade",
+        "report": "Report",
+        "openSource": "Open Source",
+        "community": "Community",
+        "morningRemind": "Good morning !",
+        "afternoonRemind": "Good afternoon !",
+        "eveningRemind": "Good evening !",
+        "login": "Login",
+        "sighUp": "Sign up",
+        "slogan": "We have the best research organizations to help you achieve your business goals.",
+        "slogan2": "let research be everywhere and for everyone",
+        "at": "",
+        "publish": "published",
+        "viewMore": "Go to see more",
+        "more": "MORE",
+        "belong": "Belong to ",
+        "applier": "applied"
+    },
+    "clientCentre": {
+        "home": "Home Page",
+        "title1": "My Published Task",
+        "title2": "My Applied Task",
+        "addTask": "Add New Task",
+        "name": "Task Name",
+        "bid": "Bid",
+        "status": "Status",
+        "pubDate": "Publish Date"
+    },
+    "detailPage": {
+        "home": "Home",
+        "project": "Popular Open Projects",
+        "task": "Popular Tasks",
+        "orgLeft": "I am in ",
+        "usd": "USD",
+        "orgRight": "",
+        "criteria": "Project Criteria",
+        "relatedTasks": "Related Tasks",
+        "addTask": "Add New Task",
+        "viewer": "Viewers",
+        "applicants": "Applicants",
+        "contact": "Contact",
+        "apply": "Apply",
+        "belong": "Belong to",
+        "edit": "Edit",
+        "applicant": "Applicants",
+        "nickName": "Nickname",
+        "contactWay": "Contact",
+        "status": "Status",
+        "organization": "Organization",
+        "": ""
+    },
+    "publishProject": {
+        "head": "Publish Task",
+        "title": "Task Info",
+        "addTask": "Add New Task",
+        "cancel": "Cancel",
+        "name": "Task Name",
+        "des": "Description",
+        "bid": "Bid",
+        "changeStatus": "Change status",
+        "save": "Save",
+        "publish": "Publish",
+        "placeHolder1": "Type task name here...",
+        "placeHolder2": "Describe your task here..."
+    },
+    "publishTask": {
+        "title": "Project Info",
+        "projectName": "Project Name",
+        "orgName": "Organization",
+        "des": "Description",
+        "industry": "Industry ",
+        "contact": "Contact",
+        "keyword": "Key Words",
+        "photo": "Photos",
+        "cover": "Cover Photo",
+        "warningLeft": "Only can upload ",
+        "warningRight": " pcs photoes at most",
+        "criteria": "Criteria",
+        "save": "Save and go ahead",
+        "cancel": "Cancel",
+        "edit": "Edit"
+    },
+    "taskHall": {
+        "home": "Home",
+        "title": "Task Hall",
+        "industry": "Industry:",
+        "category": "Task classification:",
+        "all": "All",
+        "pubDate": "Pubdate",
+        "price": "Price",
+        "name": "Name",
+        "hot": "Hot",
+        "taskName": "Task Name",
+        "view": "Viewers",
+        "industry2": "Industry"
+    },
+    "sortPart": {
+        "PubdateOldtoNew": "Pubdate:Old to New",
+        "PubdateNewtoOld": "Pubdate:New to Old",
+        "PriceLowtoHigh": "Price:Low to High",
+        "PriceHightoLow": "Price:High to Low",
+        "NameZ-A": "Name:Z-A",
+        "NameA-Z": "Name:A-Z",
+        "HotLowtoHigh": "Hot:Low to High",
+        "HotHightoLow": "Hot:High to Low",
+        "filter": "Filter"
+    },
+    "centrePage": {
+        "switchOrg": "Switch Organization",
+        "": "",
+        "": "",
+        "": "",
+        "": "",
+        "": "",
+        "": "",
+        "": "",
+        "": ""
+    }
+}

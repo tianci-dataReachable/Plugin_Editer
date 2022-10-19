@@ -1,0 +1,218 @@
+/**
+* @file PluginEditorDetail
+* @date 2022-10-17
+* @author wangtianci
+* @lastModify wangtianci 2022-10-17
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@import "~/Constant/breakPoint.scss";
+@import "~/Constant/font.scss";
+@import "~/Constant/color.scss";
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+@mixin demo {
+}
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.PluginEditorDetail_container {
+    width: 100%;
+    height: 100%;
+    background-color: $bg;
+    position: relative;
+}
+.pluginEditorDetail_header {
+    height: 6rem;
+    width: 100%;
+    position: relative;
+}
+.pluginEditorDetail_logo {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 25px;
+    color: #1394a1;
+    margin-left: 4rem;
+    position: absolute;
+    bottom: 0;
+}
+.pluginEditorDetail_main {
+    height: 76%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.pluginEditorDetail_breadCrumbs {
+    margin-left: 36rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 1.6rem;
+}
+.pluginEditorDetail_home {
+    display: flex;
+    align-items: center;
+    @include c_body_1();
+    color: $neutral_300;
+    cursor: pointer;
+    > svg {
+        margin-right: 0.3rem;
+    }
+}
+.pluginEditorDetail_currentName {
+    @include c_body_1();
+    color: $neutral_500;
+    margin-left: 0.5rem;
+    cursor: pointer;
+
+    > span {
+        color: $neutral_400;
+        margin-left: 1rem;
+    }
+}
+.pluginEditorDetail_imgShowContainer {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    margin: auto;
+}
+.pluginEditorDetail_leftButton {
+    width: 6rem;
+    height: 6rem;
+    background-color: rgba(#000, 0.2);
+    border-radius: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    > svg {
+        transform: rotate(-180deg);
+        font-size: 2rem;
+        color: #fff;
+    }
+}
+.pluginEditorDetail_imgShowBox {
+    width: 95rem;
+    margin: 0 3.2rem;
+
+    > img {
+        width: 100%;
+        box-shadow: $shadow_small;
+    }
+}
+
+.pluginEditorDetail_rightButton {
+    width: 6rem;
+    height: 6rem;
+    background-color: rgba(#000, 0.2);
+    border-radius: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    > svg {
+        font-size: 2rem;
+        color: #fff;
+    }
+}
+.pluginEditorDetail_footer {
+    width: 100%;
+    height: 13.9%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pluginEditorDetail_selectionListBox {
+    width: 62.5%;
+    height: 13.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    user-select: none;
+}
+.pluginEditorDetail_leftSelectionButton {
+    // width: 1.1rem;
+    // height: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 3rem;
+    > svg {
+        transform: rotate(-180deg);
+        font-size: 1.6rem;
+        color: $neutral_400;
+    }
+}
+.pluginEditorDetail_selectionList {
+    width: 108rem;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+        width: 0 !important;
+    } // chrome 和Safari
+    scrollbar-width: none;
+    transition: 0.5ms;
+    scroll-behavior: smooth;
+}
+
+.pluginEditorDetail_selectionImg {
+    height: 11.4rem;
+    width: 16rem;
+    margin-left: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.3rem solid transparent;
+    // background-color: #bfa;
+    border-radius: 0.9rem;
+
+    &:first-child {
+        margin-left: 0;
+    }
+}
+.pluginEditorDetail_Img {
+    height: 10.8rem;
+    border-radius: 0.6rem;
+    border: 0.1rem solid transparent;
+    &:hover {
+        height: 11.2rem;
+        transition: 5ms;
+        box-shadow: $shadow_small;
+    }
+}
+.pluginEditorDetail_selectionImg_active {
+    width: 16.5rem;
+    height: 11.6rem;
+    border: 0.3rem solid rgba($primary_600, 0.3);
+}
+.pluginEditorDetail_img_active {
+    height: 11rem;
+    border: 0.1rem solid $primary_600;
+    border-radius: 0.6rem;
+}
+.pluginEditorDetail_rightSelectionButton {
+    // width: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 3rem;
+    > svg {
+        font-size: 1.6rem;
+        color: $neutral_400;
+    }
+}
