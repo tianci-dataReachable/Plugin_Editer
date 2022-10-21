@@ -15,17 +15,18 @@ import {
     ChinaStyleDetailList,
     gameStyleDetailList,
     tecStyleDetailList,
+    styleItemType,
 } from "~/DefaultData/styleDetail";
 import { useEffect, useState } from "react";
 import { useLocation, Location, useNavigate } from "react-router-dom";
-// import {Location} from ""
 
 /* <------------------------------------ **** DEPENDENCE IMPORT END **** ------------------------------------ */
 /* <------------------------------------ **** INTERFACE START **** ------------------------------------ */
 /** This section will include all the interface for this tsx file */
 interface statepProps {
     style: string;
-    id: string;
+    index: number;
+    styleOverviewList: styleItemType[];
 }
 /* <------------------------------------ **** INTERFACE END **** ------------------------------------ */
 /* <------------------------------------ **** FUNCTION COMPONENT START **** ------------------------------------ */
@@ -35,53 +36,88 @@ const PluginEditorDetail = (): JSX.Element => {
     /* <------------------------------------ **** STATE END **** ------------------------------------ */
     /* <------------------------------------ **** PARAMETER START **** ------------------------------------ */
     /************* This section will include this component parameter *************/
-    const [styleDetailList, setStyleDetailList] = useState(ChinaStyleDetailList);
+    const [styleDetailList, setStyleDetailList] = useState<Array<styleItemType | undefined>>();
     const navigate = useNavigate();
     const location: Location = useLocation();
     const state = location.state as statepProps;
-    // const state = (location.state as statepProps) || { style: "中国风", id: "01" };
     useEffect(() => {
-        if (state.style === "中国风") setStyleDetailList(ChinaStyleDetailList);
-        if (state.style === "游戏风") setStyleDetailList(gameStyleDetailList);
-        if (state.style === "科技风") setStyleDetailList(tecStyleDetailList);
-    }, [state.style]);
+        let showList: Array<styleItemType | undefined> = [];
+
+        if (state.style === "中国风") {
+            showList = state.styleOverviewList.map((item) => {
+                return ChinaStyleDetailList.find((Detailitem) => Detailitem.id === item.id);
+            })
+                ? state.styleOverviewList.map((item) => {
+                      return ChinaStyleDetailList.find((Detailitem) => Detailitem.id === item.id);
+                  })
+                : ChinaStyleDetailList;
+            setStyleDetailList(showList);
+        }
+
+        if (state.style === "游戏风") {
+            showList = state.styleOverviewList.map((item) => {
+                return gameStyleDetailList.find((Detailitem) => Detailitem.id === item.id);
+            })
+                ? state.styleOverviewList.map((item) => {
+                      return gameStyleDetailList.find((Detailitem) => Detailitem.id === item.id);
+                  })
+                : gameStyleDetailList;
+            setStyleDetailList(showList);
+        }
+        if (state.style === "科技风") {
+            showList = state.styleOverviewList.map((item) => {
+                return tecStyleDetailList.find((Detailitem) => Detailitem.id === item.id);
+            })
+                ? state.styleOverviewList.map((item) => {
+                      return tecStyleDetailList.find((Detailitem) => Detailitem.id === item.id);
+                  })
+                : tecStyleDetailList;
+            setStyleDetailList(showList);
+        }
+    }, [state.style, state.styleOverviewList]);
     useEffect(() => {
-        setSelectedImg(state.id);
+        setSelectedImg(state.index);
     }, [state]);
-    const [selectedImg, setSelectedImg] = useState(style.id);
+
+    const [selectedImg, setSelectedImg] = useState(0);
     /* <------------------------------------ **** PARAMETER END **** ------------------------------------ */
     /* <------------------------------------ **** FUNCTION START **** ------------------------------------ */
     /************* This section will include this component general function *************/
 
-    const handleClickImg = (id: string) => {
-        setSelectedImg(id);
+    const handleClickImg = (index: number) => {
+        setSelectedImg(index);
     };
     const handleBackToEditor = () => {
         navigate("/plugin-editor", { state: { style: state.style } });
     };
 
     const handleSelectPreviousImg = () => {
-        let previousImg: string = (Number(selectedImg) - 1).toString();
-
-        if (previousImg === "0") {
-            previousImg = styleDetailList.length.toString();
-        }
-        if (Number(previousImg) > 0 && Number(previousImg) < 10) {
-            previousImg = "0" + previousImg;
+        // let currentIndex: number|undefined = styleDetailList?.indexOf(styleDetailList?.find(
+        //     (item) => item?.id === state.id,
+        // ));
+        // setSelectedImg(styleDetailList[currentIndex]);
+        // let previousImg: string = (Number(selectedImg) - 1).toString();
+        // if (previousImg === "0") {
+        //     previousImg = styleDetailList!.length.toString();
+        // }
+        // if (Number(previousImg) > 0 && Number(previousImg) < 10) {
+        //     previousImg = "0" + previousImg;
+        // }
+        // setSelectedImg(previousImg);
+        let previousImg = selectedImg - 1;
+        if (previousImg === -1 && styleDetailList?.length) {
+            previousImg = styleDetailList?.length - 1;
         }
 
         setSelectedImg(previousImg);
     };
     const handleSelectNextImg = () => {
-        let NextImg: string = (Number(selectedImg) + 1).toString();
+        let previousImg = selectedImg + 1;
+        if (styleDetailList?.length && previousImg === styleDetailList?.length) {
+            previousImg = 0;
+        }
 
-        if (Number(NextImg) > styleDetailList.length) {
-            NextImg = "1";
-        }
-        if (Number(NextImg) > 0 && Number(NextImg) < 10) {
-            NextImg = "0" + NextImg;
-        }
-        setSelectedImg(NextImg);
+        setSelectedImg(previousImg);
     };
     const selectionList = document.querySelector(".pluginEditorDetail_selectionList");
 
@@ -108,7 +144,7 @@ const PluginEditorDetail = (): JSX.Element => {
                 <div className={style.pluginEditorDetail_logo}>dataReachable</div>
             </div>
             <div className={style.pluginEditorDetail_main}>
-                <div className={style.pluginEditorDetail_breadCrumbs}>
+                {/* <div className={style.pluginEditorDetail_breadCrumbs}>
                     <div className={style.pluginEditorDetail_home} onClick={handleBackToEditor}>
                         <Icon type="home" />
                         插件主题风格 /
@@ -123,7 +159,7 @@ const PluginEditorDetail = (): JSX.Element => {
                             })}
                         </span>
                     </div>
-                </div>
+                </div> */}
                 <div className={style.pluginEditorDetail_imgShowContainer}>
                     <div
                         className={style.pluginEditorDetail_leftButton}
@@ -132,11 +168,45 @@ const PluginEditorDetail = (): JSX.Element => {
                         <Icon type="open" />
                     </div>
                     <div className={style.pluginEditorDetail_imgShowBox}>
-                        {styleDetailList.map((item) => {
-                            if (item.id === selectedImg) {
-                                return <img src={item.cover} key={item.id} />;
-                            }
-                        })}
+                        {styleDetailList &&
+                            styleDetailList.map((item, i) => {
+                                if (i === selectedImg) {
+                                    return (
+                                        <div
+                                            className={style.pluginEditorDetailPage_img}
+                                            key={item?.id}
+                                        >
+                                            <div
+                                                className={style.pluginEditorDetailHall_breadCrumbs}
+                                            >
+                                                <div
+                                                    className={style.pluginEditorDetailHall_home}
+                                                    onClick={handleBackToEditor}
+                                                >
+                                                    <Icon type="home" />
+                                                    插件主题风格 /
+                                                </div>
+                                                <div
+                                                    className={
+                                                        style.pluginEditorDetailHall_currentName
+                                                    }
+                                                >
+                                                    {state.style}
+                                                    <span
+                                                        className={
+                                                            style.pluginEditorDetailHall_currentNameDetail
+                                                        }
+                                                    >
+                                                        {styleDetailList &&
+                                                            styleDetailList[selectedImg]?.title}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <img src={item?.cover} />
+                                        </div>
+                                    );
+                                }
+                            })}
                     </div>
                     <div
                         className={style.pluginEditorDetail_rightButton}
@@ -156,38 +226,40 @@ const PluginEditorDetail = (): JSX.Element => {
                     </div>
                     <div className={style.pluginEditorDetail_selectionList}>
                         {/* <ScrollComponent bodyClassName={style.pluginEditorDetail_ScrollComponent}> */}
-                        {styleDetailList.map((item) => {
-                            return item.id === selectedImg ? (
-                                <div
-                                    className={getClassNames({
-                                        [style.pluginEditorDetail_selectionImg]: true,
-                                        [style.pluginEditorDetail_selectionImg_active]: true,
-                                    })}
-                                    key={item.id}
-                                >
-                                    <img
-                                        src={item.cover}
-                                        className={style.pluginEditorDetail_img_active}
-                                        onClick={() => handleClickImg(item.id)}
-                                        // id="highLightImg"
-                                    />
-                                </div>
-                            ) : (
-                                <div
-                                    className={getClassNames({
-                                        [style.pluginEditorDetail_selectionImg]: true,
-                                        [style.pluginEditorDetail_selectionImg_active]: false,
-                                    })}
-                                    key={item.id}
-                                >
-                                    <img
-                                        src={item.cover}
-                                        className={style.pluginEditorDetail_Img}
-                                        onClick={() => handleClickImg(item.id)}
-                                    />
-                                </div>
-                            );
-                        })}
+                        {styleDetailList &&
+                            styleDetailList.map((item, i) => {
+                                return i === selectedImg ? (
+                                    <div
+                                        className={getClassNames({
+                                            [style.pluginEditorDetail_selectionImg]: true,
+                                            [style.pluginEditorDetail_selectionImg_active]: true,
+                                        })}
+                                        key={item?.id}
+                                    >
+                                        <img
+                                            src={item?.cover}
+                                            className={style.pluginEditorDetail_img_active}
+                                            onClick={() => handleClickImg(i)}
+                                            // id="highLightImg"
+                                        />
+                                    </div>
+                                ) : (
+                                    <div
+                                        className={getClassNames({
+                                            [style.pluginEditorDetail_selectionImg]: true,
+                                            [style.pluginEditorDetail_selectionImg_active]: false,
+                                        })}
+                                        key={item?.id}
+                                    >
+                                        <img
+                                            // eslint-disable-next-line react-hooks/exhaustive-deps
+                                            src={item?.cover}
+                                            className={style.pluginEditorDetail_Img}
+                                            onClick={() => handleClickImg(i)}
+                                        />
+                                    </div>
+                                );
+                            })}
                         {/* </ScrollComponent> */}
                     </div>
                     <div

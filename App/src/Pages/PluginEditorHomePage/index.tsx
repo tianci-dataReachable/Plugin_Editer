@@ -14,6 +14,7 @@ import {
     ChinaStyleOverviewList,
     gameStyleOverviewList,
     tecStyleOverviewList,
+    styleItemType,
 } from "~/DefaultData/styleOverview";
 import { useNavigate } from "react-router-dom";
 /* <------------------------------------ **** DEPENDENCE IMPORT END **** ------------------------------------ */
@@ -26,7 +27,8 @@ interface styleSelectionItem {
 }
 interface statepProps {
     style: string;
-    id: string;
+    index: number;
+    styleOverviewList: styleItemType[];
 }
 /* <------------------------------------ **** INTERFACE END **** ------------------------------------ */
 /* <------------------------------------ **** FUNCTION COMPONENT START **** ------------------------------------ */
@@ -43,6 +45,7 @@ const PluginEditorHome = (): JSX.Element => {
     ];
     const [selectStyleList, setSelectStyleList] = useState(styleSelectionList);
     const [styleOverviewList, setStyleOverviewList] = useState(ChinaStyleOverviewList);
+    const [searchValue, setSearchValue] = useState("");
     /* <------------------------------------ **** PARAMETER END **** ------------------------------------ */
     /* <------------------------------------ **** FUNCTION START **** ------------------------------------ */
     /************* This section will include this component general function *************/
@@ -62,9 +65,50 @@ const PluginEditorHome = (): JSX.Element => {
     };
 
     const navigate = useNavigate();
-    const handleClickImg = (style: string, id: string) => {
-        const state: statepProps = { style, id };
+    const handleClickImg = (style: string, index: number) => {
+        const state: statepProps = { style, index, styleOverviewList };
         navigate("/plugin-detail", { state });
+    };
+    /**
+     * 模糊查询
+     * @param {Array} list 原数组
+     * @param {String} keyword 查询关键字
+     * @return {Array}     查询结果
+     */
+    const fuzzyQuery = (list: styleItemType[], keyword: string) => {
+        const reg = new RegExp(keyword);
+        const arr: styleItemType[] = [];
+        for (let i = 0; i < list.length; i++) {
+            if (reg.test(list[i].title) || reg.test(list[i].style)) {
+                arr.push(list[i]);
+            }
+        }
+        return arr;
+    };
+    const handleClickSearch = () => {
+        console.log();
+        const currentStyle = selectStyleList.filter((item) => item.status === true);
+        let searchList: styleItemType[] = [];
+        if (currentStyle[0].id === "ChinaStyle") searchList = ChinaStyleOverviewList;
+        if (currentStyle[0].id === "gameStyle") searchList = gameStyleOverviewList;
+        if (currentStyle[0].id === "tecStyle") searchList = tecStyleOverviewList;
+        if (searchValue) {
+            setStyleOverviewList(fuzzyQuery(searchList, searchValue));
+        } else {
+            setStyleOverviewList(searchList);
+        }
+    };
+
+    const handleKeyup = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.code === "Escape") {
+            setSearchValue("");
+        }
+        if (e.code === "Enter" || e.code === "NumpadEnter") {
+            handleClickSearch();
+        }
+    };
+    const handleInputBlur = () => {
+        handleClickSearch();
     };
     /* <------------------------------------ **** FUNCTION END **** ------------------------------------ */
     /* <------------------------------------ **** EFFECT START **** ------------------------------------ */
@@ -76,8 +120,15 @@ const PluginEditorHome = (): JSX.Element => {
             <div className={style.PluginEditorHome_header}>
                 <div className={style.PluginEditorHome_logo}>dataReachable</div>
                 <div className={style.pluginEditorHome_searchBox}>
-                    <input className={style.PluginEditorHome_search} placeholder="搜索..." />
-                    <div className={style.pluginEditorHome_icon}>
+                    <input
+                        className={style.PluginEditorHome_search}
+                        placeholder="搜索..."
+                        value={searchValue}
+                        onChange={(e) => setSearchValue(e.target.value)}
+                        onKeyUp={(e) => handleKeyup(e)}
+                        onBlur={handleInputBlur}
+                    />
+                    <div className={style.pluginEditorHome_icon} onClick={handleClickSearch}>
                         <Icon type="search" />
                     </div>
                 </div>
@@ -102,7 +153,22 @@ const PluginEditorHome = (): JSX.Element => {
                 </div>
                 <div className={style.pluginEditorHome_list}>
                     <ScrollComponent bodyClassName={style.ScrollComponent}>
-                        {styleOverviewList.map((item) => {
+                        {styleOverviewList.length !== 0 ? (
+                            styleOverviewList.map((item, i) => {
+                                return (
+                                    <div
+                                        className={style.pluginEditorHome_listItem}
+                                        key={item.id}
+                                        onClick={() => handleClickImg(item.style, i)}
+                                    >
+                                        <img src={item.cover} />
+                                    </div>
+                                );
+                            })
+                        ) : (
+                            <div className={style.pluginEditorHome_none}>无搜索结果</div>
+                        )}
+                        {/* {styleOverviewList.map((item) => {
                             return (
                                 <div
                                     className={style.pluginEditorHome_listItem}
@@ -112,7 +178,7 @@ const PluginEditorHome = (): JSX.Element => {
                                     <img src={item.cover} />
                                 </div>
                             );
-                        })}
+                        })} */}
                     </ScrollComponent>
                 </div>
             </div>

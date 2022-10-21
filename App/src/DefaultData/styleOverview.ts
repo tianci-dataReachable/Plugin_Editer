@@ -10,6 +10,8 @@ import bg_ChinaStyle_09 from "~/Assets/image/styleOverview/bg_ChinaStyle_09.png"
 import bg_ChinaStyle_10 from "~/Assets/image/styleOverview/bg_ChinaStyle_10.png";
 import bg_ChinaStyle_11 from "~/Assets/image/styleOverview/bg_ChinaStyle_11.png";
 import bg_ChinaStyle_12 from "~/Assets/image/styleOverview/bg_ChinaStyle_12.png";
+import bg_ChinaStyle_13 from "~/Assets/image/styleOverview/bg_ChinaStyle_13.png";
+import bg_ChinaStyle_14 from "~/Assets/image/styleOverview/bg_ChinaStyle_14.png";
 import bg_gameStyle_01 from "~/Assets/image/styleOverview/bg_gameStyle_01.png";
 import bg_gameStyle_02 from "~/Assets/image/styleOverview/bg_gameStyle_02.png";
 import bg_gameStyle_03 from "~/Assets/image/styleOverview/bg_gameStyle_03.png";
@@ -22,6 +24,8 @@ import bg_gameStyle_09 from "~/Assets/image/styleOverview/bg_gameStyle_09.png";
 import bg_gameStyle_10 from "~/Assets/image/styleOverview/bg_gameStyle_10.png";
 import bg_gameStyle_11 from "~/Assets/image/styleOverview/bg_gameStyle_11.png";
 import bg_gameStyle_12 from "~/Assets/image/styleOverview/bg_gameStyle_12.png";
+import bg_gameStyle_13 from "~/Assets/image/styleOverview/bg_gameStyle_13.png";
+import bg_gameStyle_14 from "~/Assets/image/styleOverview/bg_gameStyle_14.png";
 import bg_tecStyle_01 from "~/Assets/image/styleOverview/bg_tecStyle_01.png";
 import bg_tecStyle_02 from "~/Assets/image/styleOverview/bg_tecStyle_02.png";
 import bg_tecStyle_03 from "~/Assets/image/styleOverview/bg_tecStyle_03.png";
@@ -35,6 +39,8 @@ import bg_tecStyle_10 from "~/Assets/image/styleOverview/bg_tecStyle_10.png";
 import bg_tecStyle_11 from "~/Assets/image/styleOverview/bg_tecStyle_11.png";
 import bg_tecStyle_12 from "~/Assets/image/styleOverview/bg_tecStyle_12.png";
 import bg_tecStyle_13 from "~/Assets/image/styleOverview/bg_tecStyle_13.png";
+import bg_tecStyle_14 from "~/Assets/image/styleOverview/bg_tecStyle_14.png";
+import bg_tecStyle_15 from "~/Assets/image/styleOverview/bg_tecStyle_15.png";
 
 export interface styleItemType {
     id: string;
@@ -116,13 +122,25 @@ export const ChinaStyleOverviewList: styleItemType[] = [
         style: "中国风",
         title: "拖拽类 - 一维多选",
     },
+    {
+        id: "13",
+        cover: bg_ChinaStyle_13,
+        style: "中国风",
+        title: "拖拽类 - 一维圆环打分",
+    },
+    {
+        id: "14",
+        cover: bg_ChinaStyle_14,
+        style: "中国风",
+        title: "拖拽类 - 一维圆环打分",
+    },
 ];
 export const gameStyleOverviewList: styleItemType[] = [
     {
         id: "01",
         cover: bg_gameStyle_01,
         style: "游戏风",
-        title: "点击方块类 - 二维多选）",
+        title: "点击方块类 - 二维多选",
     },
     {
         id: "02",
@@ -189,6 +207,18 @@ export const gameStyleOverviewList: styleItemType[] = [
         cover: bg_gameStyle_12,
         style: "游戏风",
         title: "拖拽类 - 一维多选",
+    },
+    {
+        id: "13",
+        cover: bg_gameStyle_13,
+        style: "游戏风",
+        title: "拖拽类 - 一维圆环打分",
+    },
+    {
+        id: "14",
+        cover: bg_gameStyle_14,
+        style: "游戏风",
+        title: "拖拽类 - 一维圆环打分",
     },
 ];
 export const tecStyleOverviewList: styleItemType[] = [
@@ -269,5 +299,17 @@ export const tecStyleOverviewList: styleItemType[] = [
         cover: bg_tecStyle_13,
         style: "科技风",
         title: "拖拽类 - 一维多选",
+    },
+    {
+        id: "14",
+        cover: bg_tecStyle_14,
+        style: "科技风",
+        title: "拖拽类 - 一维圆环打分",
+    },
+    {
+        id: "15",
+        cover: bg_tecStyle_15,
+        style: "科技风",
+        title: "拖拽类 - 一维圆环打分",
     },
 ];

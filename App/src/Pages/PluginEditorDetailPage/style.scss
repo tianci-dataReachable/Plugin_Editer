@@ -45,14 +45,14 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.pluginEditorDetail_breadCrumbs {
-    margin-left: 36rem;
+.pluginEditorDetailHall_breadCrumbs {
+    height: 2.4rem;
     display: flex;
     align-items: center;
     overflow: hidden;
-    margin-bottom: 1.6rem;
+    margin-bottom: 5rem;
 }
-.pluginEditorDetail_home {
+.pluginEditorDetailHall_home {
     display: flex;
     align-items: center;
     @include c_body_1();
@@ -62,7 +62,7 @@
         margin-right: 0.3rem;
     }
 }
-.pluginEditorDetail_currentName {
+.pluginEditorDetailHall_currentName {
     @include c_body_1();
     color: $neutral_500;
     margin-left: 0.5rem;
@@ -74,6 +74,7 @@
     }
 }
 .pluginEditorDetail_imgShowContainer {
+    height: 100%;
     overflow: hidden;
     width: 100%;
     display: flex;
@@ -99,14 +100,24 @@
 }
 .pluginEditorDetail_imgShowBox {
     width: 95rem;
+    height: 100%;
+    // width: 70rem;
     margin: 0 3.2rem;
-
+}
+.pluginEditorDetailPage_img {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-between;
+    position: relative;
     > img {
         width: 100%;
         box-shadow: $shadow_small;
+        position: absolute;
+        top: 50%;
+        // transform: ;
     }
 }
-
 .pluginEditorDetail_rightButton {
     width: 6rem;
     height: 6rem;
